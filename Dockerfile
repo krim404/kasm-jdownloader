@@ -6,6 +6,7 @@ RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN apt update && apt upgrade -y
 RUN apt install -y openjdk-18-jre
 COPY --chmod=777 ./JDownloader.jar /opt/
+COPY --chmod=777 ./run.sh /opt/
 
 ENV HOME /home/kasm-user
 WORKDIR $HOME
