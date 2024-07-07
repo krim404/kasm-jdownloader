@@ -1,0 +1,51 @@
+# Mac OS generierte Dateien
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Xcode
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+*.xcworkspace/
+
+# IDE Dateien
+*.idea/
+*.iml
+
+# Umgebungsvariablen 
+.env
+.env.*
+
+# Logs und Datenbanken
+*.log
+*.sql
+*.sqlite
+
+# Generierte Dateien
+*.o
+*.pyc
+*.mo
+*.pot
+*.class
+
+# Backup Dateien
+*~
+*.swp
+*.bak

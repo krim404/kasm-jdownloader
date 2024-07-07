@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Qemu Init
+Exec=java -jar /opt/JDownloader.jar
