@@ -8,10 +8,10 @@ build-and-push:
   services:
     - docker:26.1.4-dind
   before_script:
-    - docker login -u $HARBOR_USERNAME -p $HARBOR_PASSWORD $HARBOR_HOST
+    - echo "$HARBOR_PASSWORD" | docker login --username "$HARBOR_USERNAME" --password-stdin "$HARBOR_HOST"
   script:
-    - docker buildx create --use
-    - docker buildx build --platform linux/amd64 -t $CI_REGISTRY_IMAGE:latest --push .
+    - docker build -t $CI_REGISTRY_IMAGE:latest --push .
+
 
 trivy_scan:
   stage: scan
