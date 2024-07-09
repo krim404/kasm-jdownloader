@@ -3,10 +3,10 @@ stages:
   - scan
 
 build-and-push:
-  image: docker:26.1.4
+  image: docker:27.0.3
   stage: build
   services:
-    - docker:26.1.4-dind
+    - docker:27.0.3-dind
   before_script:
     - echo "$HARBOR_PASSWORD" | docker login --username "$HARBOR_USERNAME" --password-stdin "$HARBOR_HOST"
   script:
