@@ -27,6 +27,7 @@ trivy_scan:
 
 push:
   stage: push
+  image: docker:27.0.3
   before_script:
     - docker login -u $HARBOR_USERNAME -p $HARBOR_PASSWORD $HARBOR_HOST
   script:
