@@ -4,7 +4,6 @@ stages:
   - push
 
 variables:
-  AFTER_SCRIPT_IGNORE_ERRORS: "true"
   IMAGE_NAME: $HARBOR_HOST/library/$CI_PROJECT_NAME
   
 build:
@@ -13,11 +12,7 @@ build:
   services:
     - docker:27.0.3-dind
   script:
-    - docker buildx create --use --name builder
-    - docker buildx build --platform linux/amd64,linux/arm64 -t $IMAGE_NAME:$CI_COMMIT_REF_SLUG -t $IMAGE_NAME:latest .
-  after_script:
-    - docker buildx stop builder
-    - docker buildx rm builder
+    - docker build -t $IMAGE_NAME:$CI_COMMIT_REF_SLUG -t $HARBOR_HOST/library/$CI_PROJECT_NAME:latest .
 
 trivy_scan:
   stage: scan
