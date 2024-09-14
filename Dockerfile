@@ -1,4 +1,4 @@
-FROM registry.krim.dev/library/kasm-krimbase-xfce:latest
+FROM registry.krim.dev/kasm/kasm-krimbase-xfce:latest
 WORKDIR /tmp/
 USER root
 RUN echo "kasm-user  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
