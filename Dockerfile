@@ -8,6 +8,9 @@ RUN apt install -y openjdk-18-jre
 RUN chmod -R 777 /opt/
 RUN apt-get remove -y xfce4-panel
 
+RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ttf-mscorefonts-installer && fc-cache -f -v
+
 ENV HOME /home/kasm-user
 WORKDIR $HOME
 RUN mkdir -p $HOME && chown -R 1000:0 $HOME
