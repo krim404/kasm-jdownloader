@@ -24,6 +24,6 @@ RUN ln -s /home/kasm-user/jd/ /opt/JDownloader/cfg
 
 
 COPY ./run.desktop /etc/xdg/autostart/run.desktop
-RUN timeout 30s java -jar -Djava.awt.headless=true /opt/JDownloader/JDownloader.jar
+RUN java -jar -Djava.awt.headless=true /opt/JDownloader/JDownloader.jar
 
 
