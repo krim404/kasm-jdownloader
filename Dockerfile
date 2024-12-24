@@ -9,7 +9,7 @@ RUN chmod -R 777 /opt/
 RUN apt-get remove -y xfce4-panel
 
 RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ttf-mscorefonts-installer && fc-cache -f -v
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ttf-mscorefonts-installer firefox && fc-cache -f -v
 
 ENV HOME /home/kasm-user
 WORKDIR $HOME
